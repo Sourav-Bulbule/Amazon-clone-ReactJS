@@ -8,7 +8,7 @@ module.exports = {
           background : "#EAEDED",
           light_blue: "#232F3A",
           yellow: "FEBD69",
-          DEFAULT:"#131921",
+          DEFAULT:"#131921"
         }
       }
     },
