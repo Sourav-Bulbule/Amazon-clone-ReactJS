@@ -37,7 +37,7 @@ const Slider = () => {
           <img src="../images/carousel_5.jpg" />
         </SwiperSlide>
     </Swiper>
-    <div className="h-[40%] bg-gradient-to-b from-black"/>
+    <div className="h-[70%] bg-gradient-to-b from-black"/>
     </div>
   )
 }
