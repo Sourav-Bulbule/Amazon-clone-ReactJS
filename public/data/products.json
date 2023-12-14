@@ -114,7 +114,7 @@
     "8" :{
         "id" : 8,
         "title": "2023 Guide to the Night Sky",
-        "image": "../images/product_8.jpg",
+        "image": "../images/product_8_small.jpg",
         "image_small": "../images/product_8_small.jpg",
         "attribute": "Hardcover", 
         "description" : "From the UK’s Number One Astronomy publisher, this is the bestselling stargazing handbook to the planets, stars and constellations visible from the northern hemisphere.",

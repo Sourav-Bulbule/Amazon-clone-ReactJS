@@ -10,7 +10,7 @@ const HomePageCard = ({title, img, link}) => {
         <img className="h-[100%] w-[100%] object-cover"  src={img} />
       </div>
       <div className="text-xs xl:text-sm text-blue-400 ml-2">
-        {title}
+        {link}
       </div>
     </div>
   )
