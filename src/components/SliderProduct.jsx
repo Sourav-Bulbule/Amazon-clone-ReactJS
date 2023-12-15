@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 
 const SliderProduct = () => {
   return (
-    <div className="bg-white m-2 p-2 -mt-[38px]">
+    <div className="bg-white m-2 p-2 ">
       <div className=" text-[18px] font-semibold ">Best Seller</div>
         <Swiper
         slidesPerView={5}
