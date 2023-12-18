@@ -4,11 +4,15 @@ import { useState, useEffect } from 'react';
 import { callApi } from '../utils/CallApi';
 import {ProductDetails} from './';
 import { GB_CURRENCY } from '../utils/constants';
+import { addToCart } from '../redux/cartSlice';
+import { useDispatch } from 'react-redux';
 
 const ProductPage = () => {
   //useParam helps us get the day vaya Link which was saved in key
   const {id} = useParams();
   const [product, setProduct] = useState(null);
+
+  const dispatch = useDispatch();
 
   //useing api call to get the data from the backend which in this case is the data saved in the product.json 
   const getProduct = ()=>{
@@ -57,7 +61,7 @@ const ProductPage = () => {
               <option>3</option>
             </select>
           </div>
-          <button className="bg-yellow-400 w-full p-3 text-xs xl:text-sm rounded mt-3 hover:bg-yellow-500">Add to Cart</button>
+          <button onClick={()=>dispatch(addToCart())} className="bg-yellow-400 w-full p-3 text-xs xl:text-sm rounded mt-3 hover:bg-yellow-500">Add to Cart</button>
         </div>
       </div>
     </div>
