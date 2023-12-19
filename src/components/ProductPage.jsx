@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { callApi } from '../utils/CallApi';
 import {ProductDetails} from './';
@@ -12,7 +12,14 @@ const ProductPage = () => {
   const {id} = useParams();
   const [product, setProduct] = useState(null);
 
+  const [quantity, setQuantity] = useState("1");
+
   const dispatch = useDispatch();
+
+  const addQuantityToProduct = () => { 
+    setProduct(product.quantity = quantity);
+    return product;
+   }
 
   //useing api call to get the data from the backend which in this case is the data saved in the product.json 
   const getProduct = ()=>{
@@ -55,13 +62,16 @@ const ProductPage = () => {
           <div className="text-sm xl:text-base font-semibold text-blue-500 mt-1">FREE Delivery</div>
           <div className="text-base xl:text-lg font-semibold text-green-700 mt-1">In Stock</div>
           <div className="text-base xl:text-lg mt-1">Quantity: 
-            <select className="p-1 bg-white rounded-md border focus:border-indigo-600 ">
+            <select onChange={(e)=>{setQuantity(e.target.value)}} className="p-1 bg-white rounded-md border focus:border-indigo-600 ">
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
           </div>
-          <button onClick={()=>dispatch(addToCart())} className="bg-yellow-400 w-full p-3 text-xs xl:text-sm rounded mt-3 hover:bg-yellow-500">Add to Cart</button>
+          <Link to={"/checkout"}> 
+          <button onClick={()=>dispatch(addToCart(addQuantityToProduct()))} className="btn">Add to Cart</button>
+          </Link>
+          
         </div>
       </div>
     </div>
